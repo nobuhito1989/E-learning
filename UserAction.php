@@ -42,8 +42,7 @@ require_once("admin/User.php");
             elseif(isset($_POST['edit'])){
                 $id = $_POST['id'];
                 $username= $_POST['username'];
-                $firstname= $_POST['firstname'];
-                $lastname= $_POST['lastname'];
+                $email= $_POST['email'];
        
                 $user->updateUser($id,$username,$email);
                 }

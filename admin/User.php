@@ -61,6 +61,34 @@ class User extends Database{
             
 
         }
+
+        public function updateUser($id,$username,$email){
+
+            $sql = "UPDATE users SET username='$username', email='$email' WHERE user_id = $id";
+            $result = $this->conn->query($sql);
+
+            
+                if($result){
+                header("location: AdminFormUsers.php");
+            }else{
+                echo "Connection Error: " . $this->conn->error;
+            }
+        
+    }
+        
+        public function deleteUser($id){
+
+        $sql= "DELETE FROM users WHERE user_id = $id";
+
+        $result = $this->conn->query($sql);
+
+            if($result){
+          header('location:AdminFormUsers.php');
+        }else{
+          echo "Error: " . $sql . "<br>" . $this->$conn->error;
+            }
+    
+}
         
     
 
