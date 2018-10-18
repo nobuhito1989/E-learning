@@ -59,15 +59,15 @@
 						<div class="header_content d-flex flex-row align-items-center justify-content-start">
 							<div class="logo_container">
 								<a href="#">
-									<div class="logo_text">Unic<span>at</span></div>
+									<div class="logo_text">E<span>learning</span></div>
 								</a>
 							</div>
 							<nav class="main_nav_contaner ml-auto">
 								<ul class="main_nav">
-									<li><a href="index.html">Home</a></li>
-									<li><a href="about.html">About</a></li>
-									<li class="active"><a href="courses.html">Courses</a></li>
-									<li><a href="contact.html">Contact</a></li>
+									<li><a href="main.php">Home</a></li>
+									<li><a href="#">About</a></li>
+									<li class="active"><a href="course.php">Courses</a></li>
+									<li><a href="#">Contact</a></li>
 								</ul>
 								
 
@@ -153,18 +153,7 @@
 
 				<!-- Courses Main Content -->
 				<div class="col-lg-8">
-					<div class="courses_search_container">
-						<form action="#" id="courses_search_form" class="courses_search_form d-flex flex-row align-items-center justify-content-start">
-							<input type="search" class="courses_search_input" placeholder="Search Courses" required="required">
-							<select id="courses_search_select" class="courses_search_select courses_search_input">
-								<option>All Categories</option>
-								<option>Category</option>
-								<option>Category</option>
-								<option>Category</option>
-							</select>
-							<button action="submit" class="courses_search_button ml-auto">search now</button>
-						</form>
-					</div>
+					
 					<div class="courses_container">
 						<div class="row courses_row">
 							

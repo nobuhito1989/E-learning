@@ -1,5 +1,5 @@
 <?php 
-require_once("admin/User.php");
+require_once("admin/Category.php");
 ?>
 
 
@@ -42,59 +42,35 @@ require_once("admin/User.php");
         <table class="container">
             <thead>
                 <tr>
-                    <th>UserID</th>
-                    <th>Username</th>
-                    <th>E-mail</th>
-                    <th>Action</th>
+                    <th>CategoryID</th>
+                    <th>CategoryName</th>
                 </tr>
             </thead>
 
             <tbody>
                 <?php 
 
-                 $users = new User;
+                 $category = new Category;
 
                  //excute the query
-                 $result = $users->getUsers();
+                 $result = $category->getCategory();
 
                  foreach($result as $key => $row){
-                    $id = $row['user_id'];
+                    $id = $row['category_id'];
                     echo "<tr>";
-                    echo "<td>" .$row['user_id'] . "</td>";
-                    echo "<td>" .$row['username'] . "</td>";
-                    echo "<td>" .$row['email'] . "</td>";
-                    echo "<td><a href='edituser.php?id=$id' class='btn btn-info btn-sm'>Edit</a></td>";
-                    echo "<td><a href='UserAction.php?actiontype=delete&id=$id' class='btn btn-danger btn-sm'>Delete</a></td>";
+                    echo "<td>" .$row['category_id'] . "</td>";
+                    echo "<td>" .$row['c_name'] . "</td>";
+                    echo "<td><a href='admin/CategoryAction.php?actiontype=delete&id=$id' class='btn btn-danger btn-sm'>Delete</a></td>";
                     echo "</tr>"; 
  
                      }
                 ?>
             </tbody>
 
+
         </table>
+                <a href='addcategory.php?' class='btn btn-info btn-sm'>Add Category</a>
     
         
 
     </div>
-
-    
-
-
-    <script src="js/jquery-3.2.1.min.js"></script>
-    <script src="styles/bootstrap4/popper.js"></script>
-    <script src="styles/bootstrap4/bootstrap.min.js"></script>
-    <script src="plugins/greensock/TweenMax.min.js"></script>
-    <script src="plugins/greensock/TimelineMax.min.js"></script>
-    <script src="plugins/scrollmagic/ScrollMagic.min.js"></script>
-    <script src="plugins/greensock/animation.gsap.min.js"></script>
-    <script src="plugins/greensock/ScrollToPlugin.min.js"></script>
-    <script src="plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
-    <script src="plugins/easing/easing.js"></script>
-    <script src="plugins/parallax-js-master/parallax.min.js"></script>
-    <script src="js/custom.js"></script>
-
-    
-</body>
-
-
-</html>
