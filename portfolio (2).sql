@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: 2018 年 10 月 18 日 06:56
+-- Generation Time: 2018 年 10 月 22 日 06:55
 -- サーバのバージョン： 10.1.34-MariaDB
 -- PHP Version: 5.6.37
 
@@ -47,6 +47,13 @@ CREATE TABLE `course` (
   `course_details` varchar(1000) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- テーブルのデータのダンプ `course`
+--
+
+INSERT INTO `course` (`course_id`, `user_id`, `category_id`, `course_title`, `course_details`) VALUES
+(3, 0, 0, 'php', 'jfdkla;joiejijijiijflga  kkdfla;hur fda:jrkldjaf: ');
+
 -- --------------------------------------------------------
 
 --
@@ -56,8 +63,15 @@ CREATE TABLE `course` (
 CREATE TABLE `course_content` (
   `content_id` int(11) NOT NULL,
   `course_id` int(11) NOT NULL,
-  `course_data` int(11) NOT NULL
+  `course_data` text COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- テーブルのデータのダンプ `course_content`
+--
+
+INSERT INTO `course_content` (`content_id`, `course_id`, `course_data`) VALUES
+(3, 0, '<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/xb8aad4MRx8\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>');
 
 -- --------------------------------------------------------
 
@@ -140,13 +154,13 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `course`
 --
 ALTER TABLE `course`
-  MODIFY `course_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `course_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `course_content`
 --
 ALTER TABLE `course_content`
-  MODIFY `content_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `content_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `profile`

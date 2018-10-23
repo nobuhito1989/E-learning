@@ -19,7 +19,7 @@
     }
 
     ?>
-        <form method="post" action="courseAction.php">
+        <form method="post" action="CourseAction.php">
             <div class="form-group">
                 <label>Course Title</label>
                 <input type="text" name="course_title" id="coursetitle" class="form-control">
@@ -36,7 +36,7 @@
             </div>
            
 
-            <input type="submit" value="submit" class="btn btn-primary" name="add">
+            <input type="submit" value="submit" class="btn btn-primary" name="addcourse">
         </form>
     </div>
 </body>

@@ -1,3 +1,7 @@
+<?php 
+require_once("admin/Course.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -156,11 +160,39 @@
 					
 					<div class="courses_container">
 						<div class="row courses_row">
+
+						<!-- Course -->
+
+							<?php
+
+							$course = new Course;
 							
-							<!-- Course -->
+
+							$result = $course->getCourse();
+							
+							foreach($result as $key => $row){
+
+
+							echo "<div class='col-lg-6 course_col'>";
+							echo	"<div class='course'>";
+							echo		"<div class='course_image'>" . $row['course_data'] . "</div>";
+							echo		"<div class='course_body'>";
+							echo			"<h3 class='course_title'>" .$row['course_title'] . "</h3>";
+							echo			"<div class='course_text'>";
+							echo				"<p>" .$row['course_details'] . "</p>";
+							echo			"</div>";
+							echo		"</div>";
+							echo	"</div>";
+							echo "</div>";
+							}
+
+							?>
+							
+							
+
 							<div class="col-lg-6 course_col">
 								<div class="course">
-									<div class="course_image"><img src="images/course_4.jpg" alt=""></div>
+									<div class="course_image"><iframe width="560" height="315" src="https://www.youtube.com/embed/nIsEB8eYC1g" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
 									<div class="course_body">
 										<h3 class="course_title"><a href="course.html">Software Training</a></h3>
 										<div class="course_teacher">Mr. John Taylor</div>
