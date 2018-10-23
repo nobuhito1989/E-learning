@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: 2018 年 10 月 18 日 03:20
+-- Generation Time: 2018 年 10 月 23 日 03:44
 -- サーバのバージョン： 10.1.34-MariaDB
 -- PHP Version: 5.6.37
 
@@ -43,9 +43,36 @@ CREATE TABLE `course` (
   `course_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `category_id` int(11) NOT NULL,
-  `course_name` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `course_video` blob NOT NULL
+  `course_title` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `course_details` varchar(1000) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- テーブルのデータのダンプ `course`
+--
+
+INSERT INTO `course` (`course_id`, `user_id`, `category_id`, `course_title`, `course_details`) VALUES
+(5, 0, 0, 'php', 'jfdkla;joiejijijiijflga  kkdfla;hur fda:jrkldjaf: ');
+
+-- --------------------------------------------------------
+
+--
+-- テーブルの構造 `course_content`
+--
+
+CREATE TABLE `course_content` (
+  `content_id` int(11) NOT NULL,
+  `course_id` int(11) NOT NULL,
+  `course_data` text COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- テーブルのデータのダンプ `course_content`
+--
+
+INSERT INTO `course_content` (`content_id`, `course_id`, `course_data`) VALUES
+(6, 5, ''),
+(7, 0, '<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/xb8aad4MRx8\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>');
 
 -- --------------------------------------------------------
 
@@ -97,6 +124,12 @@ ALTER TABLE `course`
   ADD PRIMARY KEY (`course_id`);
 
 --
+-- Indexes for table `course_content`
+--
+ALTER TABLE `course_content`
+  ADD PRIMARY KEY (`content_id`);
+
+--
 -- Indexes for table `profile`
 --
 ALTER TABLE `profile`
@@ -116,13 +149,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `course`
 --
 ALTER TABLE `course`
-  MODIFY `course_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `course_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `course_content`
+--
+ALTER TABLE `course_content`
+  MODIFY `content_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `profile`
